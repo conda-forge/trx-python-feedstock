@@ -317,4 +317,5 @@ Feedstock Maintainers
 =====================
 
 * [@arokem](https://github.com/arokem/)
+* [@skoudoro](https://github.com/skoudoro/)
 

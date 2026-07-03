@@ -1,5 +1,6 @@
 {% set name = "trx-python" %}
 {% set version = "0.4.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +11,6 @@ source:
   sha256: 264e25d57dd98ead71a009a2e35a8143c98ff5b32fcabce7464a9d1a8c88195d
 
 build:
-  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
   noarch: python
@@ -19,13 +19,13 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - setuptools >=64
     - wheel
     - setuptools-scm >=7
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - deepdiff
     - nibabel >=5
     - numpy >=1.22
